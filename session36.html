@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 36</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(skyblue,slateblue);
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quiz App</h1>
+        <h2 id="score">0</h2>
+    </header>
+    <h3>1. What does HTML stand for?</h3>
+    <label for="">1. Hypertext Markup Language</label>
+    <input type="radio" name="html" id="" value="correct"><br><br>
+    <label for="">2. Hypertext Madeup Language</label>
+    <input type="radio" name="html" id="" value="wrong"><br><br>
+    <label for="">3. Highertext Markup Language</label>
+    <input type="radio" name="html" id="" value="wrong"><br><br>
+    <label for="">4. Hypertext Media Language</label>
+    <input type="radio" name="html" id="" value="wrong"><br><br>
+    <h3>2. Who was Queen Elizabeth 2?</h3>
+    <label for="">1. Queen of England</label>
+    <input type="radio" name="queen" id="" value="correct"><br><br>
+    <label for="">2. Queen of Scotland</label>
+    <input type="radio" name="queen" id="" value="wrong"><br><br>
+    <label for="">3. Queen of Australia</label>
+    <input type="radio" name="queen" id="" value="wrong"><br><br>
+    <label for="">4. Queen of New Zealand</label>
+    <input type="radio" name="queen" id="" value="wrong"><br><br>
+    <h3>3. What is 4x + 4  = 12?</h3>
+    <label for="">x = 1</label>
+    <input type="radio" name="maths" id="" value="wrong">
+    <label for="">x = 2</label>
+    <input type="radio" name="maths" id="" value="correct">
+    <label for="">x = 3</label>
+    <input type="radio" name="maths" id="" value="wrong">
+    <label for="">x = 4</label>
+    <input type="radio" name="maths" id="" value="wrong">
+    <h3>4. Is Spider-man a superhero?</h3>
+    <label for="">Yes</label>
+    <input type="radio" name="super" id="" value="correct">
+    <label for="">No</label>
+    <input type="radio" name="super" id="" value="wrong">
+    <label for="">Maybe</label>
+    <input type="radio" name="super" id="" value="wrong">
+    <h3>5. How does a computer store data?</h3>
+    <label for="">Memory</label>
+    <input type="radio" name="computer" id="" value="correct">
+    <label for="">Processor</label>
+    <input type="radio" name="computer" id="" value="wrong">
+    <label for="">Speaker</label>
+    <input type="radio" name="computer" id="" value="wrong">
+    <label for="">Monitor</label>
+    <input type="radio" name="computer" id="" value="wrong"><br><br>
+    <button onclick="check()">Submit Answer</button>
+</body>
+<script>
+    var score  = 0;
+    var game = false;
+    function check(){
+        if(game == false){
+        var html = document.querySelector('input[name="html"]:checked').value;
+        if(html == "correct"){
+            score = score + 1
+        }
+        var queen = document.querySelector('input[name="queen"]:checked').value;
+        if(queen == "correct"){
+            score = score + 1
+        }
+        var maths = document.querySelector('input[name="maths"]:checked').value;
+        if(maths == "correct"){
+            score = score + 1;
+        }
+        var hero = document.querySelector('input[name="super"]:checked').value;
+        if(hero == "correct"){
+            score = score + 1;
+        }
+        var computer = document.querySelector('input[name="computer"]:checked').value;
+        if(computer == "correct"){
+            score = score + 1;
+        }
+        document.getElementById("score").innerText = 
+        score;
+        game = true;
+    }
+    }
+</script>
+</html>
